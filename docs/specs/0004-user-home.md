@@ -2,7 +2,7 @@
 
 ## Mục tiêu
 
-Tài khoản USER hiện đăng nhập được nhưng gặp màn hình không có quyền quản trị. Thay màn hình này bằng trang chủ hành khách `/user/home`, đồng thời bảo toàn các module ADMIN.
+Tài khoản USER hiện đăng nhập được nhưng gặp màn hình không có quyền quản trị. Thay màn hình này bằng trang chủ hành khách `/user/home`, đồng thời bảo toàn các module ADMIN. Khách chưa đăng nhập truy cập `/` sẽ thấy trang giới thiệu GoBus với nút Đăng nhập và Đăng ký.
 
 ## Thiết kế
 
@@ -11,12 +11,15 @@ Tài khoản USER hiện đăng nhập được nhưng gặp màn hình không c
 - Đã đọc design context chi tiết và screenshot trước khi triển khai. Frame gồm utility bar 40px, header 80px, hero 520px, ba thẻ giới thiệu và footer.
 - Manrope là font của frame này, được đóng gói cục bộ qua `@fontsource-variable/manrope`. Giao diện admin tiếp tục dùng Geist.
 - Chỉ tìm thấy bản desktop trong section Trang chủ. Bản mobile chuyển thành một cột, giữ các khu vực và tài nguyên gốc.
+- Trang công khai `/` dùng cùng nhận diện, ảnh hero và thẻ giới thiệu; thay tìm kiếm cần đăng nhập bằng CTA Đăng nhập và Đăng ký. Trang hành khách `/user/home` vẫn giữ tìm kiếm và điều hướng sau đăng nhập.
 
 ## Điều hướng
 
 | Tình huống | Kết quả |
 | --- | --- |
+| Chưa có phiên, truy cập `/` | Trang giới thiệu GoBus công khai, có liên kết `/login` và `/register` |
 | Chưa có phiên, truy cập trang được bảo vệ | `/login` |
+| Chưa có phiên, truy cập `/login` hoặc `/register` | Giữ đúng biểu mẫu tương ứng |
 | USER đăng nhập, mở `/`, `/login` hoặc trang ADMIN | `/user/home` |
 | ADMIN đăng nhập từ trang quản trị hợp lệ | Giữ `/stations`, `/routes` hoặc `/schedules` tương ứng |
 | ADMIN đăng nhập từ `/login`, mở `/` hoặc `/user/home` | `/stations` |
@@ -45,4 +48,4 @@ Dùng History API cho chuyển hướng thay thế và lắng nghe `popstate`, k
 
 ## Tiêu chí nghiệm thu
 
-Đăng nhập USER/ADMIN, tải lại trang, URL trực tiếp, Back, mất phiên, lỗi đăng xuất và kiểm tra 403 phải đúng; desktop bám frame; mobile không tràn ngang; tài nguyên tải cục bộ; API trả dữ liệu thật và kiểm tra dữ liệu gốc không đổi sau bộ kiểm thử.
+Khách mở `/` và tải lại sẽ thấy trang giới thiệu công khai với liên kết đăng nhập/đăng ký; URL `/login` và `/register` mở đúng biểu mẫu; đường dẫn chức năng chưa đăng nhập chuyển tới `/login`. Đăng nhập USER/ADMIN, tải lại trang, URL trực tiếp, Back, mất phiên, lỗi đăng xuất và kiểm tra 403 phải đúng; desktop bám frame; mobile không tràn ngang; tài nguyên tải cục bộ; API trả dữ liệu thật và kiểm tra dữ liệu gốc không đổi sau bộ kiểm thử.

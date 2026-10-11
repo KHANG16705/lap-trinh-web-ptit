@@ -6,7 +6,7 @@
 
 Từ thư mục gốc chạy `docker compose up -d`. Chạy backend bằng `npm run start:dev` trong `backend/`, frontend bằng `npm run dev` trong `frontend/`.
 
-Mở **http://localhost:5173/login** theo WEB_ORIGIN hiện có. Dùng tài khoản USER đang hoạt động để vào `/user/home`; tài khoản ADMIN vào `/stations` hoặc đường dẫn quản trị hợp lệ đang mở. Tài khoản kiểm thử được cấu hình trong `.env`; không ghi thông tin đăng nhập vào tài liệu hoặc mã nguồn.
+Mở **http://localhost:5173/** để xem trang giới thiệu công khai. Từ đó chọn **Đăng nhập** hoặc **Đăng ký**; dùng tài khoản USER đang hoạt động để vào `/user/home`, tài khoản ADMIN vào `/stations` hoặc đường dẫn quản trị hợp lệ đang mở. Tài khoản kiểm thử được cấu hình trong `.env`; không ghi thông tin đăng nhập vào tài liệu hoặc mã nguồn.
 
 Trang chủ hiển thị tên thật, đăng xuất, bến và tuyến thật. Hai ô điểm xuất phát và điểm đến cho phép gõ địa điểm, lọc gợi ý có hoặc không dấu và chọn bến. Nhập địa điểm rồi bấm **Tìm kiếm lộ trình nhanh** hoặc **Tìm Đường** để mở trang **Lộ trình & Bản đồ** với điểm đi và điểm đến đã điền sẵn. Khi có đủ hai bến hợp lệ, trang bản đồ tự tìm lộ trình. Các nút **Mua vé** và **Đặt vé ngay** chuyển nội dung hai ô sang trang đặt vé để người dùng chọn ngày và tìm chuyến. Chữ chưa chọn từ gợi ý vẫn được giữ nguyên ở trang đích; người dùng chọn bến phù hợp để xác định tọa độ hoặc tìm chuyến vé hợp lệ.
 

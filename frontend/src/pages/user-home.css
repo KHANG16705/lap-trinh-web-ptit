@@ -136,6 +136,21 @@
   gap: 12px;
   min-width: 0;
 }
+.public-home-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.public-home-nav > a:first-child {
+  color: var(--home-ink);
+  font-weight: 700;
+}
+.public-home-nav .home-button {
+  text-decoration: none;
+}
+.public-home-nav .home-button:hover {
+  color: white;
+}
 .home-account > span {
   font-weight: 700;
   max-width: 150px;
@@ -199,6 +214,17 @@
   margin-top: 84px;
   color: white;
   flex: 1;
+}
+.public-home-hero {
+  align-items: center;
+}
+.public-home-copy {
+  max-width: 680px;
+  margin-block: 0;
+}
+.public-home-actions {
+  max-width: 440px;
+  margin-top: 28px;
 }
 .home-badge {
   display: inline-block;
@@ -498,6 +524,16 @@
   line-height: 1.55;
   opacity: 0.5;
 }
+.home-contact > a {
+  color: white;
+  opacity: 0.75;
+}
+.home-contact > a:hover {
+  opacity: 1;
+}
+.public-home-footer .home-company {
+  max-width: 480px;
+}
 .home-footer-divider {
   height: 0;
   position: relative;
@@ -583,6 +619,9 @@
     padding-block: 16px;
     gap: 18px;
   }
+  .public-home-nav {
+    margin-left: auto;
+  }
   .home-nav {
     gap: 24px;
   }
@@ -629,6 +668,16 @@
   }
   .home-header {
     gap: 20px 12px;
+  }
+  .public-home-nav {
+    gap: 12px;
+  }
+  .public-home-nav .home-button {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+  .public-home-nav > a:first-child {
+    font-size: 13px;
   }
   .home-brand {
     gap: 8px;
@@ -679,6 +728,9 @@
   }
   .home-hero-copy {
     margin: 0;
+    max-width: 540px;
+  }
+  .public-home-copy {
     max-width: 540px;
   }
   .home-badge {

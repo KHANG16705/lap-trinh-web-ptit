@@ -8,6 +8,8 @@
 
 Figma 102:3 in the same GoBus file is implemented at `/user/home`; its section is 102:2 on page 14:2. Keep its Manrope font, local assets in `public/home/`, and scoped `pages/user-home.css` separate from admin styles. Preserve the original hero, value cards and footer. Replace sample route names with API data and auth actions with the real account. Desktop is the design source; mobile is adapted responsively. Deliberate differences and screenshots: `../docs/user-home-module.md`.
 
+Signed-out visitors see a public GoBus introduction at `/`, using the same local assets and visual language. Its header and hero provide clear `/login` and `/register` links; do not render authenticated search or passenger account controls there.
+
 Source: Figma bPqt1G05XZ7b4cTDiAc0Uo, frames 92:558 / 92:699 / 92:999 / 92:1148 / 92:1287.
 Character: giao diện quản trị gọn, nền sáng, chữ tối, bảng trắng có đường viền, điểm nhấn xanh nhạt ở điều hướng.
 

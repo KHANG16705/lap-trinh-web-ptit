@@ -11,6 +11,7 @@ import StationsPage from './pages/StationsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import UserHomePage from './pages/UserHomePage';
+import PublicLandingPage from './pages/PublicLandingPage';
 import BookingLayout from './components/bookings/BookingLayout';
 import BookingSearchPage from './pages/BookingSearchPage';
 import BookingPage from './pages/BookingPage';
@@ -163,7 +164,9 @@ export default function App() {
       </main>
     );
   if (!session.user)
-    return destination === '/register' ? (
+    return destination === '/' ? (
+      <PublicLandingPage />
+    ) : destination === '/register' ? (
       <RegisterPage onRegister={login} />
     ) : (
       <LoginPage message={session.message} onLogin={login} />

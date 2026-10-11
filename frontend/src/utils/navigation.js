@@ -26,7 +26,8 @@ export function pushNavigation(href) {
   window.dispatchEvent(new PopStateEvent('popstate'));
 }
 export function resolvePath(path, user) {
-  if (!user) return path === '/register' ? '/register' : '/login';
+  if (!user)
+    return path === '/' || path === '/register' ? path : '/login';
   const home = homePath(user.role);
   if (!home) return path;
   if (path === '/' || path === '/login' || path === '/register') return home;
