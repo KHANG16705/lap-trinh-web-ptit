@@ -217,6 +217,10 @@
 }
 .public-home-hero {
   align-items: center;
+  background: url("/home/imgImage2.png") center / cover no-repeat;
+}
+.public-home-hero .home-hero-image {
+  display: none;
 }
 .public-home-copy {
   max-width: 680px;
